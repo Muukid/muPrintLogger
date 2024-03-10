@@ -22,14 +22,32 @@ void mupl_printf(const char* p, ...) {
 	va_start(args, p);
 
 	size_t size = vsnprintf(0, 0, p, args);
-	char* s = malloc(size+1);
+	char* s = (char*)malloc(size+1);
 	vsprintf(s, p, args);
 	s[size] = '\0';
 
 	printf("%s", s);
 
 	FILE* f = fopen(MUPL_FILENAME, "a");
-	fprintf(f, (const char*)s);
+	fprintf(f, "%s", s);
+	fclose(f);
+
+	free(s);
+
+	va_end(args);
+}
+
+void mupl_log(const char* p, ...) {
+	va_list args;
+	va_start(args, p);
+
+	size_t size = vsnprintf(0, 0, p, args);
+	char* s = (char*)malloc(size+1);
+	vsprintf(s, p, args);
+	s[size] = '\0';
+
+	FILE* f = fopen(MUPL_FILENAME, "a");
+	fprintf(f, "%s", s);
 	fclose(f);
 
 	free(s);
