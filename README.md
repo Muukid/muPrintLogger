@@ -11,6 +11,12 @@ Note that *not* defining `MUPL_IMPLEMENTATION` will define everything needed to 
 # Licensing
 mupl is licensed under public domain or MIT, whichever you prefer. More information is provided in the accompanying file `license.md` and at the bottom of `muPrintLogger.h`.
 
+# Thread safety
+mupl is *not* thread safe, as if two calls to a print or log function happen simultaneously, the log file will most likely fail to open and the second print/log call will fail.
+
+# Error checking
+mupl does not have any error checking.
+
 # Functions
 
 ## Initiation and termination
