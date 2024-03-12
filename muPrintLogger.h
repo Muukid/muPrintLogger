@@ -1,6 +1,6 @@
 /*
-muGraphicsAPI - Muukid
-Public domain single-file C library for creating cross-graphics-API applications.
+muPrintLogger - Muukid
+Public domain simple C header file that writes print calls to a log file.
 No warranty implied; use at your own risk.
 
 Licensed under MIT License or public domain, whichever you prefer.
