@@ -170,6 +170,8 @@ More explicit license information at the end of the file.
 			mu_va_end(args);
 			return;
 		}
+		mu_va_end(args);
+		mu_va_start(args, p);
 		mu_vsprintf(s, p, args);
 		s[size] = '\0';
 
@@ -199,6 +201,8 @@ More explicit license information at the end of the file.
 			mu_va_end(args);
 			return;
 		}
+		mu_va_end(args);
+		mu_va_start(args, p);
 		mu_vsprintf(s, p, args);
 		s[size] = '\0';
 
@@ -263,3 +267,4 @@ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ------------------------------------------------------------------------------
 */
+
